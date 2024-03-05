@@ -1,6 +1,6 @@
 {
 	"geode": "2.0.0-beta.21",
-	"version": "v1.6.0",
+	"version": "v1.7.0-beta.1",
 	"id": "beat.click-sound",
 	"name": "Click Sounds",
 	"developer": "Beat",
@@ -112,6 +112,22 @@
 			"description": "When enabled, a settings button appears in the pause menu.",
 			"type": "bool",
 			"default": true
+		},
+		"separate-volume": {
+			"name": "Separate volume slider",
+			"description": "When enabled, the click sounds' volume will depend on the volume slider below",
+			"type": "bool",
+			"default": true
+		},
+		"volume-slider": {
+			"name": "Click sounds volume (%)",
+			"type": "int",
+			"default": 100,
+			"min": 0,
+			"max": 100,
+			"control": {
+				"slider": true	
+			}
 		}
 	},
 	"repository": "https://github.com/BeatACVR/geode-clicksound",
