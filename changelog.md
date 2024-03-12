@@ -1,4 +1,17 @@
 # Changelog
+## Version v1.7.2
+* 2 new click sounds and release sounds (both randomized)
+* Added click sounds settings button in the editor
+* 2 player click support (can't do different clicks)
+* Dual mode support in editor
+## Version v1.7.1
+* Fixed a bug where sounds don't play in editor testplaying
+* Fixed a bug with sound -12 not playing
+* Lowered the minimum Geode version to beta.20
+## Version v1.7.0
+* Volume is now seperate from SFX! (thank you weebify, very cool :thumbs_up:)
+* Previewing sounds now works while in the pause menu (thank you weebify, very cool :thumbs_up:)
+* Sounds will no longer play twice in dual mode (thank you weebify, very cool :thumbs_up:)
 ## Version v1.6.0
 * A new logo has been added! (ty rue!)
 ## Version v1.5.3
