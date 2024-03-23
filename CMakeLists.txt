@@ -9,12 +9,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(click-sound VERSION 1.0.0)
 
 # Add Everything under src dir
-file(GLOB SOURCES
-	src/layers/*.cpp
-    src/main.cpp
-    src/ClickList.cpp
-    src/ReleaseList.cpp
-)
+file(GLOB_RECURSE SOURCES src/*.cpp)
 
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
@@ -29,4 +24,4 @@ endif()
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
 # Set up dependencies, resources, link Geode
-setup_geode_mod(${PROJECT_NAME} EXTERNALS geode.node-ids:1.6.1)
+setup_geode_mod(${PROJECT_NAME} EXTERNALS geode.node-ids:1.8.1)

@@ -1,11 +1,11 @@
 {
-	"geode": "2.0.0-beta.20",
-	"version": "v1.7.2-alpha.2",
+	"geode": "2.0.0-beta.22",
+	"version": "v2.0.0-alpha.1",
 	"id": "beat.click-sound",
 	"name": "Click Sounds",
 	"developers": [
 		"Beat",
-		"Coop",
+		"Cooper",
 		"Viper",
 		"Weebify",
 		"Uproxide"
@@ -51,13 +51,16 @@
 			"type": "custom",
 			"description": "This only works if you opened settings from the main menu."
 	 	},
+		"clicksound-type": {
+			"type": "custom"
+		},
 		"clicksound-currentsound": {
 			"name": "Current click sound",
 			"description": "Change the click sound. Negative numbers for meme sounds, 0 for custom sounds, and positive numbers for useful sounds. Check mod description for a sound list.",
 			"type": "int",
 			"default": 1,
 			"min": -27,
-			"max": 31,
+			"max": 34,
 			"control": {
 				"arrows": true,
 				"slider": false
@@ -89,13 +92,16 @@
 			"type": "custom",
 			"description": "This only works if you opened settings from the main menu."
 	 	},
+		"releasesound-type": {
+			"type": "custom"
+		},
 		"releasesound-currentsound": {
 			"name": "Current release sound",
 			"description": "Change the click sound. Negative numbers for meme sounds, 0 for custom sounds, and positive numbers for useful sounds. Check mod description for a sound list.",
 			"type": "int",
 			"default": 1,
 			"min": -1,
-			"max": 15,
+			"max": 18,
 			"control": {
 				"arrows": true,
 				"slider": false
@@ -123,6 +129,12 @@
 			"type": "bool",
 			"default": true
 		},
+		"decrease-volume-on-spam-click": {
+			"name": "Decrease spam volume",
+			"description": "When enabled, If you click <500ms it decreases the volume",
+			"type": "bool",
+			"default": false
+		},
 		"use-sfx-volume": {
 			"name": "Use SFX Volume Slider (Windows ONLY)",
 			"description": "When enabled, the click sounds' volume will depend on the sound effects volume slider at the in the pause menu and game settings. When disabled, the click sounds' volume will depend on the volume slider at the top of settings",
@@ -140,7 +152,7 @@
 	"dependencies": [
         {
             "id": "geode.node-ids",
-            "version": ">=v1.6.1",
+            "version": ">=v1.8.1",
             "importance": "suggested"
         }
     ],
