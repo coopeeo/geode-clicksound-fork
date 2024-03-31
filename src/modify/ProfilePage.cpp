@@ -47,7 +47,7 @@ class $modify(CustomProfilePage, ProfilePage) {
 
     //! @brief Add developer badge to mod contributors.
     void addContributorBadge() {
-        auto* mgr = click::Manager::sharedManager();
+        auto* mgr = click::Manager::shared();
 
         if (!mgr->isContributor(m_accountID)) {
             return;
