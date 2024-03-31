@@ -11,11 +11,14 @@ using namespace geode::prelude;
 // STOLE FROM VIPER'S BETTER MENU BUT CUSTOMIZED BY COOPER 
 class ClickTypeNode : public SettingNode {
 protected:
+    // values
     int m_currentPos;
     int m_currentClick;
     int m_currentMemeClick;
     std::string m_kind;
     std::string m_currentCustomClick;
+
+    // Buttons and Menus
     CCMenuItemToggler* usefulBtn;
     CCMenuItemToggler* memeBtn;
     CCMenuItemToggler* customBtn;
