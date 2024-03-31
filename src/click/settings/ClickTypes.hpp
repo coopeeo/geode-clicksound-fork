@@ -35,7 +35,7 @@ public:
     }
 
     matjson::Value getItem(std::string item) const {
-        return m_type[type];
+        return m_type[item];
     }
 
     matjson::Value getJson() const {
@@ -63,36 +63,13 @@ public:
 
     SettingNode* createNode(float width) override;
 
-    void setTab(int type) {
-        m_type["tab"] = type;
+    template <typename T>
+    void setItem(std::string item, T* value) {
+        m_type[item] = value;
     }
 
-    int getTab() const {
-        return m_type["tab"].as<int>();
-    }
-    
-    void setClick(int type) {
-        m_type["click"] = type;
-    }
-
-    int getClick() const {
-        return m_type["click"].as<int>();
-    }
-
-    void setMemeClick(int type) {
-        m_type["memeClick"] = type;
-    }
-
-    int getMemeClick() const {
-        return m_type["memeClick"].as<int>();
-    }
-
-    void setCustomClick(std::string type) {
-        m_type["customClick"] = type;
-    }
-
-    std::string getCustomClick() const {
-        return m_type["customClick"].as<std::string>();
+    matjson::Value getItem(std::string item) const {
+        return m_type[item];
     }
 
     matjson::Value getJson() const {
