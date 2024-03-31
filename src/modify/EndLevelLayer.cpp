@@ -3,31 +3,28 @@
 #include <Geode/ui/GeodeUI.hpp>
 
 #include "../click/Toolbox.hpp"
-#include "../click/utils/ee.hpp"
-
-using namespace geode::prelude;
-
-bool Carrot::carrot = false;
+#include "../click/Manager.hpp"
 
 // 🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
 class $modify(EndLevelLayer) {
     void customSetup(){
         EndLevelLayer::customSetup();
+        auto manager = click::Manager::shared();
         
-        if (Carrot::carrot) {
-            auto eee = CCNode::create();
-            auto ee = click::Toolbox::createSprite("watermark_001.png"_spr);
-            eee->setPosition(450, 260);
-            eee->setAnchorPoint({0.5, 0.5});
-            eee->setScale(0.2);
-            ee->setOpacity(10);
-            eee->addChild(ee);
+        if (manager->getWatermark()) {
+            auto watermarkNode = CCNode::create();
+            auto watermarkSprite = click::Toolbox::createSprite("watermark_001.png"_spr);
+            watermarkNode->setPosition(450, 260);
+            watermarkNode->setAnchorPoint({0.5, 0.5});
+            watermarkNode->setScale(0.2);
+            watermarkSprite->setOpacity(10);
+            watermarkNode->addChild(watermarkSprite);
             
             static_cast<cocos2d::CCLayer*>(
                 this->getChildren()->objectAtIndex(0)
-            )->addChild(eee);
+            )->addChild(watermarkNode);
         }
         
-        Carrot::carrot=false;
+        manager->setWatermark(false);
     }
 };

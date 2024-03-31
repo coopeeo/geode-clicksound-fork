@@ -14,7 +14,7 @@ class $modify(PauseLayer) {
             addNodeIDs();
         }
 
-        auto* mgr = click::Manager::sharedManager();
+        auto* mgr = click::Manager::shared();
         if (mgr->getSettingsButton()) {
             addSettingsButton();
         }

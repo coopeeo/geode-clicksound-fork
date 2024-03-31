@@ -10,7 +10,7 @@ class Manager final {
 public:
     //! @brief Get manager singleton.
     //! @return Manager singleton.
-    static Manager* sharedManager();
+    static Manager* shared();
 
     Manager();
     ~Manager() {}
@@ -27,10 +27,19 @@ public:
         return geode::Mod::get()->getSettingValue<bool>("settings-button");
     }
 
+    bool getWatermark() const {
+        return m_watermark;
+    }
+
+    void setWatermark(bool statusToSet) {
+        m_watermark = statusToSet;
+    }
+
 private:
     static Manager* s_sharedManager;
     
     std::unordered_set<int> m_contributors;
+    bool m_watermark;
 };
 
 } // namespace click

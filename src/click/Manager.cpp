@@ -8,7 +8,7 @@ namespace click {
 
 Manager* Manager::s_sharedManager = nullptr;
 
-Manager* Manager::sharedManager() {
+Manager* Manager::shared() {
     if (s_sharedManager == nullptr) {
         s_sharedManager = new (std::nothrow) Manager();
     }
@@ -21,6 +21,7 @@ Manager::Manager() {
     auto contributors = Toolbox::readJSON("contributors.json"_spr);
     m_contributors = contributors["contributors"]
         .as<std::unordered_set<int>>();
+    m_watermark = false;
 }
 
 } // namespace click

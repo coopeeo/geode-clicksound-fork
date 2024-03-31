@@ -4,6 +4,7 @@
 #include "../utils/Clicks.hpp"
 #include <matjson.hpp>
 #include <string>
+using namespace geode::prelude;
 
 struct CRTypeStruct {
     matjson::Value m_type;
@@ -29,13 +30,36 @@ public:
 
     SettingNode* createNode(float width) override;
 
-    template <typename T>
-    void setItem(std::string item, T* value) {
-        m_type[item] = value;
+    void setTab(int type) {
+        m_type["tab"] = type;
     }
 
-    matjson::Value getItem(std::string item) const {
-        return m_type[type];
+    int getTab() const {
+        return m_type["tab"].as<int>();
+    }
+
+    void setClick(int type) {
+        m_type["click"] = type;
+    }
+
+    int getClick() const {
+        return m_type["click"].as<int>();
+    }
+
+    void setMemeClick(int type) {
+        m_type["memeClick"] = type;
+    }
+
+    int getMemeClick() const {
+        return m_type["memeClick"].as<int>();
+    }
+
+    void setCustomClick(std::string type) {
+        m_type["customClick"] = type;
+    }
+
+    std::string getCustomClick() const {
+        return m_type["customClick"].as<std::string>();
     }
 
     matjson::Value getJson() const {
