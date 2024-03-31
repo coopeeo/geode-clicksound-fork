@@ -1,7 +1,9 @@
 #pragma once
 #include <Geode/Geode.hpp>
 #include <Geode/loader/SettingNode.hpp>
-#include "../utils/Clicks.hpp"
+#include <Geode/loader/SettingNode.hpp>
+using namespace geode::prelude;
+
 #include <matjson.hpp>
 #include <string>
 
@@ -30,7 +32,7 @@ public:
     SettingNode* createNode(float width) override;
 
     template <typename T>
-    void setItem(std::string item, T* value) {
+    void setItem(std::string item, T value) {
         m_type[item] = value;
     }
 
